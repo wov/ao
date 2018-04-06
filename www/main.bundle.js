@@ -841,14 +841,14 @@ var BoxiconsComponent = /** @class */ (function () {
 /***/ "./src/app/calendar/calendar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"calendarComponent\">\n    \n    <div class=\"month\">\n        \n        <div class=\"pre\">\n            \n        </div>\n        {{monthName}}\n        <div class=\"next\">    \n\n        </div>\n    </div>\n\n    <div class=\"week\">\n        <span>一</span>\n        <span>二</span>\n        <span>三</span>\n        <span>四</span>\n        <span>五</span>\n        <span>六</span>\n        <span>日</span>\n    </div>\n    \n    <div class=\"days\">\n        <ul *ngFor=\"let week of weeks\">\n            <li *ngFor=\"let day of week\"\n                [class.unactived]=\"!day.active\"\n                [class.current]=\"day.current\"\n                >\n                <span>\n                    {{day.name}}\n                </span>\n            </li>\n        </ul>\n    </div>\n\n\n\n</div>"
+module.exports = "<div class=\"calendarComponent\">\n    \n    <div class=\"month\">\n        \n        <div class=\"icon\">\n            <a [inlineSVG]=\"'arrow_left.svg'\" (click)=\"turnMonth(-1)\" ></a>\n        </div>\n        <div class=\"name\">\n            {{monthName}}\n        </div>\n        <div class=\"icon\">    \n            <a [inlineSVG]=\"'arrow_right.svg'\" (click)=\"turnMonth(1)\"></a>\n        </div>\n    </div>\n\n    <div class=\"week\">\n        <span>一</span>\n        <span>二</span>\n        <span>三</span>\n        <span>四</span>\n        <span>五</span>\n        <span>六</span>\n        <span>日</span>\n    </div>\n    \n    <div class=\"days\">\n        <ul *ngFor=\"let week of weeks\">\n            <li *ngFor=\"let day of week\"\n                [class.unactived]=\"!day.active\"\n                [class.current]=\"day.current\"\n                >\n                <span>\n                    {{day.name}}\n                </span>\n            </li>\n        </ul>\n    </div>\n\n\n\n</div>"
 
 /***/ }),
 
 /***/ "./src/app/calendar/calendar.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".calendarComponent {\n  text-align: center;\n  width: 85.33333333%;\n  margin: 0 auto; }\n  .calendarComponent .month {\n    border-bottom: 1px solid #E7E7E7;\n    padding: 7px 0;\n    font-size: 14px;\n    color: #898989; }\n  .calendarComponent .week {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .calendarComponent .week span {\n      display: inline-block;\n      width: 28px;\n      height: 28px;\n      line-height: 20px;\n      font-size: 14px;\n      margin: 4px 2px; }\n  .calendarComponent .days {\n    border-bottom: 1px solid #E7E7E7; }\n  .calendarComponent .days ul {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between; }\n  .calendarComponent .days li {\n      display: inline-block;\n      width: 28px;\n      height: 28px;\n      line-height: 28px;\n      font-size: 14px;\n      margin: 4px 2px; }\n  .calendarComponent .days li span {\n        border-radius: 100%;\n        display: inline-block;\n        width: 28px;\n        height: 28px; }\n  .calendarComponent .days li.unactived {\n        opacity: 0.3; }\n  .calendarComponent .days li.current span {\n        background-color: #ADE2FF; }\n"
+module.exports = ".calendarComponent {\n  text-align: center;\n  width: 85.33333333%;\n  margin: 0 auto; }\n  .calendarComponent .month {\n    border-bottom: 1px solid #E7E7E7;\n    padding: 7px 0;\n    font-size: 14px;\n    color: #898989;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  .calendarComponent .month .icon {\n      margin: 0 22px; }\n  .calendarComponent .month .name {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1; }\n  .calendarComponent .week {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n  .calendarComponent .week span {\n      display: inline-block;\n      width: 28px;\n      height: 28px;\n      line-height: 20px;\n      font-size: 14px;\n      margin: 4px 2px; }\n  .calendarComponent .days {\n    border-bottom: 1px solid #E7E7E7; }\n  .calendarComponent .days ul {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between; }\n  .calendarComponent .days li {\n      display: inline-block;\n      width: 28px;\n      height: 28px;\n      line-height: 28px;\n      font-size: 14px;\n      margin: 4px 2px; }\n  .calendarComponent .days li span {\n        border-radius: 100%;\n        display: inline-block;\n        width: 28px;\n        height: 28px; }\n  .calendarComponent .days li.unactived {\n        opacity: 0.3; }\n  .calendarComponent .days li.current span {\n        background-color: #ADE2FF; }\n"
 
 /***/ }),
 
@@ -879,11 +879,27 @@ var CalendarComponent = /** @class */ (function () {
     CalendarComponent.prototype.ngOnInit = function () {
         this.initCalendar();
     };
+    CalendarComponent.prototype.turnMonth = function (dir) {
+        if (this.month + dir < 0) {
+            this.year--;
+            this.month = 11;
+        }
+        else if (this.month + dir >= 12) {
+            this.year++;
+            this.month = 0;
+        }
+        else {
+            this.month += dir;
+        }
+        this.initCalendar();
+    };
     CalendarComponent.prototype.initCalendar = function () {
+        this.weeks = [];
         var monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ];
         this.monthName = monthNames[this.month];
+        this.dayslength = new Date(this.year, this.month + 1, 0).getDate();
         // Sunday - Saturday : 0 - 6
         var firstweekday = new Date(this.year, this.month, 1).getDay();
         var lastweekday = new Date(this.year, this.month + 1, 0).getDay();
@@ -1268,8 +1284,7 @@ var HomeComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/of.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("./node_modules/rxjs/_esm5/operators.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__message_service__ = __webpack_require__("./src/app/message.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__message_service__ = __webpack_require__("./src/app/message.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1283,7 +1298,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var httpOptions = {
     headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["HttpHeaders"]({ 'Content-Type': 'application/json' })
 };
@@ -1291,17 +1305,15 @@ var LoginService = /** @class */ (function () {
     function LoginService(http, messageService) {
         this.http = http;
         this.messageService = messageService;
-        // private domain = 'http://10.226.62.112:9080';
+        this.domain = 'http://10.226.62.112:9080';
         this.loginUrl = 'http://10.226.62.112:9080/mfp/api/adapters/OA/authorization/login';
+        this.localLoginUrl = 'http://localhost:8080/mfp/api/adapters/OA/authorization/login';
     }
     LoginService.prototype.login = function (uid, password) {
-        var _this = this;
         var url = this.loginUrl + "?uid=" + uid + "&password=" + password;
-        return this.http.get(url)
-            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (heroes) { return _this.log("fetched heroes"); }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError('getUser', [])));
+        return this.http.get(url);
     };
     LoginService.prototype.log = function (message) {
-        this.messageService.add('HeroService: ' + message);
     };
     LoginService.prototype.handleError = function (operation, result) {
         var _this = this;
@@ -1318,7 +1330,7 @@ var LoginService = /** @class */ (function () {
     LoginService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["HttpClient"],
-            __WEBPACK_IMPORTED_MODULE_4__message_service__["a" /* MessageService */]])
+            __WEBPACK_IMPORTED_MODULE_3__message_service__["a" /* MessageService */]])
     ], LoginService);
     return LoginService;
 }());
@@ -1330,7 +1342,7 @@ var LoginService = /** @class */ (function () {
 /***/ "./src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"logo\">\n    <div class=\"logoBox\">\n        <img src=\"/assets/img/logo.png\" alt=\"上汽集团\">\n    </div>\n</div>\n\n<form>\n    <ul>\n        <li>\n            <label>\n                <span class=\"label\">\n                    <span class=\"icon\" [inlineSVG]=\"'user.svg'\"></span>\n                    <span class=\"name\">用户</span>\n                </span>\n                <input type=\"text\" [(ngModel)]=\"user.uid\" required name=\"uid\" placeholder=\"请输入账号\">\n            </label>\n        </li>\n        <li>\n            <label>\n                <span class=\"label\">\n                    <span class=\"icon\" [inlineSVG]=\"'password.svg'\"></span>\n                    <span class=\"name\">密码</span>\n                </span>\n                <input type=\"password\" [(ngModel)]=\"user.password\" name=\"password\" required placeholder=\"请输入密码\">\n            </label>\n        </li>\n    </ul>\n\n    <button class=\"btn\" (click)=\"login(user.uid,user.password)\">登 录</button>\n\n\n</form>\n"
+module.exports = "<div class=\"logo\">\n    <div class=\"logoBox\">\n        <img src=\"/assets/img/logo.png\" alt=\"上汽集团\">\n    </div>\n</div>\n\n<form>\n    <ul>\n        <li>\n            <label>\n                <span class=\"label\">\n                    <span class=\"icon\" [inlineSVG]=\"'user.svg'\"></span>\n                    <span class=\"name\">用户</span>\n                </span>\n                <input type=\"text\" [(ngModel)]=\"loginInfo.uid\" required name=\"uid\" placeholder=\"请输入账号\">\n            </label>\n        </li>\n        <li>\n            <label>\n                <span class=\"label\">\n                    <span class=\"icon\" [inlineSVG]=\"'password.svg'\"></span>\n                    <span class=\"name\">密码</span>\n                </span>\n                <input type=\"password\" [(ngModel)]=\"loginInfo.password\" name=\"password\" required placeholder=\"请输入密码\">\n            </label>\n        </li>\n    </ul>\n\n    <button class=\"btn\" (click)=\"login(loginInfo.uid,loginInfo.password)\">登 录</button>\n\n</form>\n"
 
 /***/ }),
 
@@ -1365,7 +1377,7 @@ var LoginComponent = /** @class */ (function () {
     function LoginComponent(loginService, router) {
         this.loginService = loginService;
         this.router = router;
-        this.user = {
+        this.loginInfo = {
             uid: 'gu',
             password: '12345678'
         };
@@ -1378,9 +1390,11 @@ var LoginComponent = /** @class */ (function () {
         }
         this.loginService.login(uid, password)
             .subscribe(function (user) {
-            localStorage.setItem('user', JSON.stringify(user));
-            var redirect = '/';
-            _this.router.navigate([redirect]);
+            if (user.success) {
+                localStorage.setItem('user', JSON.stringify(user));
+                var redirect = '/';
+                _this.router.navigate([redirect]);
+            }
         });
     };
     LoginComponent.prototype.ngOnInit = function () {
@@ -1542,14 +1556,14 @@ var SubtabsComponent = /** @class */ (function () {
 /***/ "./src/app/vacation-apply/vacation-apply.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [header]=\"header\" ></app-header>\n"
+module.exports = "<app-header [header]=\"header\" ></app-header>\n\n\n<div class=\"page\">\n    <div class=\"vacationtype\">        \n        <label>选择休假类型</label>\n    </div>\n</div>\n\n\n<div class=\"\"></div>\n\n\n"
 
 /***/ }),
 
 /***/ "./src/app/vacation-apply/vacation-apply.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".page {\n  padding-top: 44px; }\n"
 
 /***/ }),
 
@@ -1559,6 +1573,7 @@ module.exports = ""
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacationApplyComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/esm5/animations.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1568,6 +1583,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 var VacationApplyComponent = /** @class */ (function () {
     function VacationApplyComponent() {
@@ -1582,7 +1598,19 @@ var VacationApplyComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-vacation-apply',
             template: __webpack_require__("./src/app/vacation-apply/vacation-apply.component.html"),
-            styles: [__webpack_require__("./src/app/vacation-apply/vacation-apply.component.scss")]
+            styles: [__webpack_require__("./src/app/vacation-apply/vacation-apply.component.scss")],
+            animations: [
+                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* trigger */])('flyInOut', [
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["b" /* state */])('in', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["c" /* style */])({ transform: 'translateX(0)' })),
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["d" /* transition */])('void => *', [
+                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["c" /* style */])({ transform: 'translateX(-100%)' }),
+                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["a" /* animate */])(100)
+                    ]),
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["d" /* transition */])('* => void', [
+                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["a" /* animate */])(100, Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["c" /* style */])({ transform: 'translateX(100%)' }))
+                    ])
+                ])
+            ]
         }),
         __metadata("design:paramtypes", [])
     ], VacationApplyComponent);
