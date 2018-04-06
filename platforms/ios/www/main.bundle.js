@@ -264,7 +264,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["HttpClientModule"],
-                __WEBPACK_IMPORTED_MODULE_4_ng_inline_svg__["InlineSVGModule"].forRoot({ baseUrl: '/assets/icons/' })
+                __WEBPACK_IMPORTED_MODULE_4_ng_inline_svg__["InlineSVGModule"].forRoot({ baseUrl: 'assets/icons/' })
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_25__login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_24__auth_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_26__message_service__["a" /* MessageService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
