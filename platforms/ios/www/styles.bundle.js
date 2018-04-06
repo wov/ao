@@ -3,7 +3,7 @@ webpackJsonp(["styles"],{
 /***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/sass-loader/lib/loader.js??ref--8-3!./src/styles.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n* {\n  margin: 0;\n  padding: 0;\n  -webkit-tap-highlight-color: transparent; }\nhtml {\n  height: 100%; }\nbody {\n  height: 100%;\n  font-family: \"Microsoft YaHei\", \"Hiragino Sans GB\";\n  color: #2B3138;\n  font-size: 12px; }\na {\n  text-decoration: none; }\nimg {\n  vertical-align: middle; }\nli {\n  list-style: none; }\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n@font-face {\n  font-family: \"HYQiHei\";\n  src: url(\"/./assets/fonts/HYQiHei.woff\") format(\"woff\"); }\n@font-face {\n  font-family: \"HYQiHei\";\n  src: url(\"/./assets/fonts/HYQiHei-Light.woff\") format(\"woff\");\n  font-weight: lighter; }\n@font-face {\n  font-family: \"HYQiHei\";\n  src: url(\"/./assets/fonts/HYQiHei-Bold.woff\") format(\"woff\");\n  font-weight: bold; }\n* {\n  margin: 0;\n  padding: 0;\n  -webkit-tap-highlight-color: transparent; }\nhtml {\n  height: 100%; }\nbody {\n  height: 100%;\n  font-family: \"HYQiHei\";\n  color: #2B3138;\n  font-size: 12px; }\na {\n  text-decoration: none; }\nimg {\n  vertical-align: middle; }\nli {\n  list-style: none; }\n"
 
 /***/ }),
 
