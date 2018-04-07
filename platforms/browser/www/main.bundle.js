@@ -1339,7 +1339,8 @@ var LoginService = /** @class */ (function () {
         this.localLoginUrl = 'http://192.168.3.113:8080/mfp/api/adapters/OA/authorization/login';
     }
     LoginService.prototype.login = function (uid, password) {
-        var url = this.loginUrl + "?uid=" + uid + "&password=" + password;
+        var url = this.localLoginUrl + "?uid=" + uid + "&password=" + password;
+        alert(url);
         return this.http.get(url)
             .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["c" /* timeout */])(3000), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) { }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError('login', { "success": false,
             "error": {
