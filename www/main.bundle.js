@@ -1342,7 +1342,7 @@ var LoginService = /** @class */ (function () {
         var url = this.localLoginUrl + "?uid=" + uid + "&password=" + password;
         alert(url);
         return this.http.get(url)
-            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["c" /* timeout */])(3000), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) { }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError('login', { "success": false,
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) { }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError('login', { "success": false,
             "error": {
                 message: "network error",
                 name: "",
