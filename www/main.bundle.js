@@ -35,9 +35,10 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__attence_team_attence_team_component__ = __webpack_require__("./src/app/attence-team/attence-team.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__vacation_vacation_component__ = __webpack_require__("./src/app/vacation/vacation.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__vacation_mine_vacation_mine_component__ = __webpack_require__("./src/app/vacation-mine/vacation-mine.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__vacation_apply_vacation_apply_component__ = __webpack_require__("./src/app/vacation-apply/vacation-apply.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__event_event_component__ = __webpack_require__("./src/app/event/event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__auth_guard_service__ = __webpack_require__("./src/app/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__vacation_history_vacation_history_component__ = __webpack_require__("./src/app/vacation-history/vacation-history.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__vacation_apply_vacation_apply_component__ = __webpack_require__("./src/app/vacation-apply/vacation-apply.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__event_event_component__ = __webpack_require__("./src/app/event/event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__auth_guard_service__ = __webpack_require__("./src/app/auth-guard.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,9 +61,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '',
-        canActivate: [__WEBPACK_IMPORTED_MODULE_15__auth_guard_service__["a" /* AuthGuard */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_16__auth_guard_service__["a" /* AuthGuard */]],
         component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */]
     },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_3__login_login_component__["a" /* LoginComponent */] },
@@ -87,14 +89,15 @@ var routes = [
         component: __WEBPACK_IMPORTED_MODULE_11__vacation_vacation_component__["a" /* VacationComponent */],
         children: [
             { path: '', component: __WEBPACK_IMPORTED_MODULE_12__vacation_mine_vacation_mine_component__["a" /* VacationMineComponent */] },
-            { path: 'mine', component: __WEBPACK_IMPORTED_MODULE_12__vacation_mine_vacation_mine_component__["a" /* VacationMineComponent */] }
+            { path: 'mine', component: __WEBPACK_IMPORTED_MODULE_12__vacation_mine_vacation_mine_component__["a" /* VacationMineComponent */] },
+            { path: 'history', component: __WEBPACK_IMPORTED_MODULE_13__vacation_history_vacation_history_component__["a" /* VacationHistoryComponent */] }
         ]
     },
     { path: 'vacationapply',
-        component: __WEBPACK_IMPORTED_MODULE_13__vacation_apply_vacation_apply_component__["a" /* VacationApplyComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_14__vacation_apply_vacation_apply_component__["a" /* VacationApplyComponent */],
     },
     { path: 'event',
-        component: __WEBPACK_IMPORTED_MODULE_14__event_event_component__["a" /* EventComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_15__event_event_component__["a" /* EventComponent */],
     },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] }
 ];
@@ -195,12 +198,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__calendar_calendar_component__ = __webpack_require__("./src/app/calendar/calendar.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__vacation_mine_vacation_mine_component__ = __webpack_require__("./src/app/vacation-mine/vacation-mine.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__vacation_apply_vacation_apply_component__ = __webpack_require__("./src/app/vacation-apply/vacation-apply.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__vacation_history_vacation_history_component__ = __webpack_require__("./src/app/vacation-history/vacation-history.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -257,14 +264,16 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_23__event_event_component__["a" /* EventComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__calendar_calendar_component__["a" /* CalendarComponent */],
                 __WEBPACK_IMPORTED_MODULE_28__vacation_mine_vacation_mine_component__["a" /* VacationMineComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__vacation_apply_vacation_apply_component__["a" /* VacationApplyComponent */]
+                __WEBPACK_IMPORTED_MODULE_29__vacation_apply_vacation_apply_component__["a" /* VacationApplyComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__vacation_history_vacation_history_component__["a" /* VacationHistoryComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["HttpClientModule"],
-                __WEBPACK_IMPORTED_MODULE_4_ng_inline_svg__["InlineSVGModule"].forRoot({ baseUrl: 'assets/icons/' })
+                __WEBPACK_IMPORTED_MODULE_4_ng_inline_svg__["InlineSVGModule"].forRoot({ baseUrl: '/assets/icons/' }),
+                __WEBPACK_IMPORTED_MODULE_30__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_25__login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_24__auth_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_26__message_service__["a" /* MessageService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
@@ -434,7 +443,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ApproveComponent = /** @class */ (function () {
     function ApproveComponent() {
         this.header = {
-            title: "审批"
+            "title": "审批",
+            "leftIcon": {},
+            "rightIcon": {
+                "icon": "exit.svg",
+                "href": "/"
+            }
         };
     }
     ApproveComponent.prototype.ngOnInit = function () {
@@ -571,7 +585,7 @@ var AttenceTeamComponent = /** @class */ (function () {
 /***/ "./src/app/attence/attence.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<div class=\"page\">\n    <app-profile></app-profile>\n    <router-outlet></router-outlet>\n</div>\n\n\n<app-footer [navs]=\"navs\"></app-footer>\n"
+module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<div class=\"page\">\n    <app-profile></app-profile>\n    <router-outlet></router-outlet>\n</div>\n\n\n<app-footer [navs]=\"navs\" [isSubFooter]=\"isSubFooter\"></app-footer>\n"
 
 /***/ }),
 
@@ -600,21 +614,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AttenceComponent = /** @class */ (function () {
     function AttenceComponent() {
-        this.header = { "title": "考勤" };
+        // header = {"title" : "考勤"}
         this.navs = [{
                 "url": "/vacation",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "holiday.svg",
                 "name": "假期"
             }, {
                 "url": "/attence",
                 "name": "考勤",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "check.svg",
                 "current": true
             }, {
                 "url": "",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "notice.svg",
                 "name": "公告"
             }];
+        this.header = {
+            "title": "考勤",
+            "leftIcon": {
+                "icon": "map.svg"
+            },
+            "rightIcon": {
+                "icon": "exit.svg",
+                "href": "/"
+            }
+        };
+        this.isSubFooter = true;
         this.user = JSON.parse(window.localStorage.getItem('user'));
     }
     AttenceComponent.prototype.ngOnInit = function () {
@@ -677,14 +702,14 @@ var AuthGuard = /** @class */ (function () {
 /***/ "./src/app/box/box.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<div class=\"page\">\n    <app-boxicons [box]=\"box\"></app-boxicons> \n</div>\n\n\n<app-footer [navs]=\"navs\"></app-footer>\n"
+module.exports = "\n<app-header [header]=\"header\" ></app-header>\n\n<div class=\"page\">\n    <app-boxicons [box]=\"box\"></app-boxicons> \n</div>\n\n<app-footer [navs]=\"navs\"></app-footer>\n"
 
 /***/ }),
 
 /***/ "./src/app/box/box.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".page {\n  padding-top: 44px; }\n"
+module.exports = ".pageContainer {\n  min-height: 100%;\n  background: #fff; }\n\n.page {\n  padding-top: 44px;\n  min-height: 100vh;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  background: #fff; }\n"
 
 /***/ }),
 
@@ -714,20 +739,20 @@ var BoxComponent = /** @class */ (function () {
         };
         this.navs = [{
                 "url": "/",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "home.svg",
                 "name": "首页",
             }, {
                 "url": "",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "info.svg",
                 "name": "消息"
             }, {
                 "url": "/box",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "box.svg",
                 "name": "百宝箱",
                 "current": true
             }, {
                 "url": "",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "man.svg",
                 "name": "我的"
             }];
         this.box = {
@@ -735,32 +760,32 @@ var BoxComponent = /** @class */ (function () {
             subTitle: "可在此定制化展示在首页的功能",
             boxicons: [{
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "air.svg",
                     "name": "差旅管理"
                 }, {
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "money_card.svg",
                     "name": "薪资查询"
                 }, {
-                    "url": "/approve/pending",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "url": "",
+                    "image": "examine.svg",
                     "name": "统一审批"
                 }, {
-                    "url": "/attence",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "url": "",
+                    "image": "attendance.svg",
                     "name": "考勤假期"
                 }, {
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "meeting.svg",
+                    "name": "会议管理"
+                }, {
+                    "url": "",
+                    "image": "message.svg",
                     "name": "及时通信"
                 }, {
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "questionnaire.svg",
                     "name": "问卷调查"
-                }, {
-                    "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
-                    "name": "会议管理"
                 }]
         };
     }
@@ -787,14 +812,14 @@ var BoxComponent = /** @class */ (function () {
 /***/ "./src/app/boxicons/boxicons.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"commonFn\">\n    <div class=\"head\">\n        <h2>{{box.headline}}</h2>\n        <p class=\"desc\">{{box.subTitle}}</p>\n    </div>\n\n    <ul class=\"iconList\">\n        <li *ngFor=\"let icon of box.boxicons\"\n            [class.current]=\"icon.current\"\n            >\n            <a \n                routerLink={{icon.url}}\n                [class.unactived]=\"!icon.url\"\n                >\n                <div class=\"iconBox\">\n                    <img src=\"{{icon.image}}\" alt=\"\">\n                </div>\n                <div class=\"iconText\">{{icon.name}}</div>\n            </a>\n        </li>\n    </ul>\n</div>\n"
+module.exports = "<div class=\"commonFn\">\n    <div class=\"head\">\n        <h2>{{box.headline}}</h2>\n        <p class=\"desc\">{{box.subTitle}}</p>\n    </div>\n\n    <ul class=\"iconList\">\n        <li *ngFor=\"let icon of box.boxicons\"\n            [class.current]=\"icon.current\"\n            >\n            <a\n                routerLink={{icon.url}}\n                [class.unactived]=\"!icon.url\"\n                >\n                <div class=\"iconBox\">\n                    <span class=\"icon\" [inlineSVG]=\"icon.image\"></span>\n                </div>\n                <div class=\"iconText\">{{icon.name}}</div>\n            </a>\n        </li>\n    </ul>\n</div>\n"
 
 /***/ }),
 
 /***/ "./src/app/boxicons/boxicons.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".commonFn {\n  margin: 20px; }\n\n.head h2 {\n  line-height: 30px;\n  font-size: 16px;\n  font-weight: normal;\n  color: #000; }\n\n.head .desc {\n  line-height: 16px;\n  color: #000; }\n\n.iconList:after {\n  content: '';\n  display: table;\n  clear: both; }\n\n.iconList li {\n  float: left;\n  width: 22%;\n  margin-top: 10px;\n  margin-right: 4%; }\n\n.iconList li:nth-child(4n) {\n    margin-right: 0; }\n\n.iconList li a {\n    display: block;\n    color: #000; }\n\n.iconList li a.unactived {\n      opacity: 0.3;\n      pointer-events: none; }\n\n.iconList li .iconBox {\n    width: 48px;\n    height: 48px;\n    margin: 0 auto;\n    padding: 10px 0 5px;\n    overflow: hidden;\n    border-radius: 50%; }\n\n.iconList li .iconBox img {\n      display: block;\n      width: 48px;\n      height: 48px;\n      border-radius: 50%; }\n\n.iconList li .iconText {\n    line-height: 26px;\n    overflow: hidden;\n    text-align: center; }\n"
+module.exports = ".commonFn {\n  margin: 20px; }\n\n.head h2 {\n  line-height: 30px;\n  font-size: 16px;\n  font-weight: normal;\n  color: #000; }\n\n.head .desc {\n  line-height: 16px;\n  color: #000; }\n\n.iconList:after {\n  content: '';\n  display: table;\n  clear: both; }\n\n.iconList li {\n  float: left;\n  width: 22%;\n  margin-top: 10px;\n  margin-right: 4%; }\n\n.iconList li:nth-child(4n) {\n    margin-right: 0; }\n\n.iconList li a {\n    display: block;\n    color: #000; }\n\n.iconList li a.unactived {\n      opacity: 0.3;\n      pointer-events: none; }\n\n.iconList li .iconBox {\n    width: 48px;\n    height: 48px;\n    margin: 0 auto;\n    padding: 10px 0 5px; }\n\n.iconList li .iconBox .icon {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n\n.iconList li .iconText {\n    line-height: 26px;\n    overflow: hidden;\n    text-align: center; }\n"
 
 /***/ }),
 
@@ -974,9 +999,7 @@ var EventComponent = /** @class */ (function () {
     function EventComponent() {
         this.header = {
             "title": "待审批事件名称",
-            "left": {
-                "type": "back"
-            }
+            "leftBack": true
         };
     }
     EventComponent.prototype.ngOnInit = function () {
@@ -1053,14 +1076,14 @@ var EventlistComponent = /** @class */ (function () {
 /***/ "./src/app/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<footer>\n    <ul>\n        <li *ngFor=\"let nav of navs\"\n            [class.current]=\"nav.current\"\n            >\n            <a \n                routerLink={{nav.url}}\n                [class.unactived]=\"!nav.url\"\n                >\n                <div class=\"iconBox\">\n                    <img src=\"{{nav.image}}\" alt=\"\">\n                </div>\n                <div class=\"iconText\">{{nav.name}}</div>\n            </a>\n        </li>\n    </ul>\n</footer>\n"
+module.exports = "<footer \n    [class.subFooter]=\"isSubFooter\"\n    >\n    <ul>\n        <li *ngFor=\"let nav of navs\"\n            [class.current]=\"nav.current\"\n            >\n            <a\n                routerLink={{nav.url}}\n                [class.unactived]=\"!nav.url\"\n                >\n                <div class=\"iconBox\">\n                    <span class=\"icon\" [inlineSVG]=\"nav.image\"></span>\n                </div>\n                <div class=\"iconText\">{{nav.name}}</div>\n            </a>\n        </li>\n    </ul>\n</footer>\n"
 
 /***/ }),
 
 /***/ "./src/app/footer/footer.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = "footer {\n  height: 50px;\n  line-height: 50px;\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  z-index: 250;\n  background: #F8F8F8; }\n  footer ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  footer li {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  footer li a {\n      display: block;\n      padding-top: 5px;\n      color: #929292; }\n  footer li a.unactived {\n        opacity: 0.3;\n        pointer-events: none; }\n  footer li .iconBox {\n      width: 24px;\n      height: 24px;\n      margin: 0 auto;\n      overflow: hidden;\n      border-radius: 50%; }\n  footer li .iconBox img {\n        display: block;\n        width: 24px;\n        height: 24px;\n        border-radius: 50%; }\n  footer li .iconText {\n      line-height: 20px;\n      overflow: hidden;\n      text-align: center;\n      font-size: 10px; }\n"
+module.exports = "footer {\n  height: 50px;\n  line-height: 50px;\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  z-index: 250;\n  background: #F8F8F8;\n  border-top: 1px solid #ACACAC; }\n  footer ul {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; }\n  footer li {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    font-weight: lighter; }\n  footer li a {\n      display: block;\n      padding-top: 5px;\n      color: #929292; }\n  footer li a.unactived {\n        opacity: 0.3;\n        pointer-events: none; }\n  footer li .iconBox {\n      width: 24px;\n      height: 24px;\n      margin: 0 auto; }\n  footer li .iconBox .icon {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        width: 24px;\n        height: 24px; }\n  footer li .iconBox .icon /deep/ svg g, footer li .iconBox .icon /deep/ svg path, footer li .iconBox .icon /deep/ svg polygon {\n          fill: #8994A0; }\n  footer li .iconText {\n      line-height: 20px;\n      overflow: hidden;\n      text-align: center;\n      font-size: 10px; }\n  footer li.current a {\n      color: #3377DA; }\n  footer li.current .iconBox .icon /deep/ svg g, footer li.current .iconBox .icon /deep/ svg path, footer li.current .iconBox .icon /deep/ svg polygon {\n      fill: #3377DA; }\n  footer.subFooter {\n    background: #3377DA; }\n  footer.subFooter li a {\n      color: #CFD7D9; }\n  footer.subFooter li .iconBox .icon /deep/ svg g, footer.subFooter li .iconBox .icon /deep/ svg path, footer.subFooter li .iconBox .icon /deep/ svg polygon {\n      fill: #CFD7D9; }\n  footer.subFooter li.current a {\n      color: #FFFFFF;\n      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }\n  footer.subFooter li.current .iconBox .icon /deep/ svg {\n      -webkit-filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.5));\n              filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.5)); }\n  footer.subFooter li.current .iconBox .icon /deep/ svg g, footer.subFooter li.current .iconBox .icon /deep/ svg path, footer.subFooter li.current .iconBox .icon /deep/ svg polygon {\n        fill: #fff; }\n"
 
 /***/ }),
 
@@ -1089,6 +1112,10 @@ var FooterComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], FooterComponent.prototype, "navs", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], FooterComponent.prototype, "isSubFooter", void 0);
     FooterComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-footer',
@@ -1192,7 +1219,7 @@ module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<div class=\
 /***/ "./src/app/home/home.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".page {\n  padding-top: 44px; }\n\n.carousel {\n  opacity: 0.3; }\n\nimg {\n  max-width: 100%; }\n\n.news {\n  opacity: 0.3; }\n"
+module.exports = ".page {\n  padding-top: 44px;\n  min-height: 100%;\n  background: #fff; }\n\n.carousel {\n  opacity: 0.3; }\n\nimg {\n  max-width: 100%; }\n\n.news {\n  opacity: 0.3; }\n"
 
 /***/ }),
 
@@ -1218,19 +1245,19 @@ var HomeComponent = /** @class */ (function () {
         this.navs = [{
                 "url": "/",
                 "name": "首页",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "home.svg",
                 "current": true
             }, {
                 "url": "",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "info.svg",
                 "name": "消息"
             }, {
                 "url": "/box",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "box.svg",
                 "name": "百宝箱"
             }, {
                 "url": "",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "man.svg",
                 "name": "我的"
             }];
         this.box = {
@@ -1238,23 +1265,23 @@ var HomeComponent = /** @class */ (function () {
             subTitle: "定制化首页功能",
             boxicons: [{
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "air.svg",
                     "name": "差旅管理"
                 }, {
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "money_card.svg",
                     "name": "薪资查询"
                 }, {
                     "url": "/approve/pending",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "examine.svg",
                     "name": "统一审批"
                 }, {
                     "url": "/attence",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "attendance.svg",
                     "name": "考勤假期"
                 }, {
                     "url": "",
-                    "image": "http://placeholder.qiniudn.com/96x96",
+                    "image": "meeting.svg",
                     "name": "会议管理"
                 }]
         };
@@ -1284,7 +1311,8 @@ var HomeComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/of.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__message_service__ = __webpack_require__("./src/app/message.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__("./node_modules/rxjs/_esm5/operators.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__message_service__ = __webpack_require__("./src/app/message.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1294,6 +1322,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1311,7 +1340,14 @@ var LoginService = /** @class */ (function () {
     }
     LoginService.prototype.login = function (uid, password) {
         var url = this.loginUrl + "?uid=" + uid + "&password=" + password;
-        return this.http.get(url);
+        return this.http.get(url)
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["c" /* timeout */])(3000), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) { }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError('login', { "success": false,
+            "error": {
+                message: "network error",
+                name: "",
+                code: "",
+                paths: ""
+            }, "data": {} })));
     };
     LoginService.prototype.log = function (message) {
     };
@@ -1330,7 +1366,7 @@ var LoginService = /** @class */ (function () {
     LoginService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["HttpClient"],
-            __WEBPACK_IMPORTED_MODULE_3__message_service__["a" /* MessageService */]])
+            __WEBPACK_IMPORTED_MODULE_4__message_service__["a" /* MessageService */]])
     ], LoginService);
     return LoginService;
 }());
@@ -1342,14 +1378,14 @@ var LoginService = /** @class */ (function () {
 /***/ "./src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"page\">\n    \n    <div class=\"logo\">\n        <div class=\"logoBox\">\n            <img src=\"assets/img/logo.png\" alt=\"上汽集团\">\n        </div>\n    </div>\n\n    <form>\n        <ul>\n            <li>\n                <label>\n                    <span class=\"label\">\n                        <span class=\"icon\" [inlineSVG]=\"'user.svg'\"></span>\n                        <span class=\"name\">用户</span>\n                    </span>\n                    <input type=\"text\" [(ngModel)]=\"loginInfo.uid\" required name=\"uid\" placeholder=\"请输入账号\">\n                </label>\n            </li>\n            <li>\n                <label>\n                    <span class=\"label\">\n                        <span class=\"icon\" [inlineSVG]=\"'password.svg'\"></span>\n                        <span class=\"name\">密码</span>\n                    </span>\n                    <input type=\"password\" [(ngModel)]=\"loginInfo.password\" name=\"password\" required placeholder=\"请输入密码\">\n                </label>\n            </li>\n        </ul>\n\n        <button class=\"btn\" (click)=\"login(loginInfo.uid,loginInfo.password)\">登 录</button>\n\n    </form>    \n</div>\n"
+module.exports = "\n<div class=\"page\">\n    \n    <div class=\"logo\">\n        <div class=\"logoBox\">\n            <img src=\"assets/img/logo.png\" alt=\"上汽集团\">\n        </div>\n    </div>\n\n    <form>\n        <ul>\n            <li>\n                <label>\n                    <span class=\"label\">\n                        <span class=\"icon\" [inlineSVG]=\"'user.svg'\"></span>\n                        <span class=\"name\">用户</span>\n                    </span>\n                    <input type=\"text\" [(ngModel)]=\"loginInfo.uid\" required name=\"uid\" placeholder=\"请输入账号\"\n                    (keyup)=\"clearError()\"\n                    >\n                </label>\n            </li>\n            <li>\n                <label>\n                    <span class=\"label\">\n                        <span class=\"icon\" [inlineSVG]=\"'password.svg'\"></span>\n                        <span class=\"name\">密码</span>\n                    </span>\n                    <input type=\"password\" [(ngModel)]=\"loginInfo.password\" name=\"password\" required placeholder=\"请输入密码\"\n                    (keyup)=\"clearError()\"\n                    >\n                </label>\n                <div class=\"errorMessage\">\n                    {{errorMessage}}\n                </div>\n            </li>\n        </ul>\n\n\n        <button class=\"btn\" (click)=\"login(loginInfo.uid,loginInfo.password)\">登 录</button>\n\n    </form>    \n</div>\n"
 
 /***/ }),
 
 /***/ "./src/app/login/login.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".page {\n  width: 100%;\n  overflow: hidden; }\n\n.logo {\n  padding-top: 100px; }\n\n.logoBox {\n  position: relative;\n  width: 35.2%;\n  margin: 0 auto; }\n\n.logoBox::after {\n    content: '';\n    display: block;\n    padding-top: 79.54545455%; }\n\n.logoBox img {\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; }\n\nform {\n  width: 84%;\n  margin: 60px 8% 0;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nform li {\n    margin-bottom: 20px; }\n\nform label {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    background-color: rgba(207, 215, 217, 0.7);\n    border-radius: 4px;\n    height: 50px;\n    font-size: 18px;\n    font-weight: lighter;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n\nform label .label {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      padding-left: 24px;\n      color: #3377DA;\n      height: 50px;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n\nform label .label .icon {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        margin-right: 10px; }\n\nform label .label .icon /deep/ svg {\n          vertical-align: middle; }\n\nform label .label .name {\n        display: inline-block;\n        vertical-align: middle;\n        white-space: nowrap; }\n\nform input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    display: block;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    background: transparent;\n    border: 0;\n    height: 50px;\n    font-size: 18px;\n    outline: none;\n    padding: 0 10px; }\n\n.btn {\n  display: block;\n  width: 100%;\n  height: 50px;\n  line-height: 50px;\n  margin-top: 40px;\n  border: 0 none;\n  border-radius: 4px;\n  background-color: #3377DA;\n  text-align: center;\n  font-size: 18px;\n  color: #fff;\n  font-family: \"HYQiHei\"; }\n"
+module.exports = ".page {\n  width: 100%;\n  overflow: hidden; }\n\n.logo {\n  padding-top: 100px; }\n\n.logoBox {\n  position: relative;\n  width: 35.2%;\n  margin: 0 auto; }\n\n.logoBox::after {\n    content: '';\n    display: block;\n    padding-top: 79.54545455%; }\n\n.logoBox img {\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%; }\n\nform {\n  width: 84%;\n  margin: 60px 8% 0;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nform .errorMessage {\n    color: red;\n    font-size: 14px;\n    height: 18px;\n    line-height: 18px; }\n\nform li {\n    margin-bottom: 20px; }\n\nform label {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    background-color: rgba(207, 215, 217, 0.7);\n    border-radius: 4px;\n    height: 50px;\n    font-size: 18px;\n    font-weight: lighter;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n\nform label .label {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      padding-left: 24px;\n      color: #3377DA;\n      height: 50px;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n\nform label .label .icon {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        margin-right: 10px; }\n\nform label .label .icon /deep/ svg {\n          vertical-align: middle; }\n\nform label .label .name {\n        display: inline-block;\n        vertical-align: middle;\n        white-space: nowrap; }\n\nform input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    display: block;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    background: transparent;\n    border: 0;\n    height: 50px;\n    font-size: 18px;\n    outline: none;\n    padding: 0 10px; }\n\n.btn {\n  display: block;\n  width: 100%;\n  height: 50px;\n  line-height: 50px;\n  margin-top: 40px;\n  border: 0 none;\n  border-radius: 4px;\n  background-color: #3377DA;\n  text-align: center;\n  font-size: 18px;\n  color: #fff;\n  font-family: \"HYQiHei\"; }\n"
 
 /***/ }),
 
@@ -1386,6 +1422,7 @@ var LoginComponent = /** @class */ (function () {
         // localStorage.setItem('user','{"success":"0","error":{"name":null,"code":null,"message":null,"paths":null},"data":{"employeeNumber":"00000024","uid":"gu","cn":"顾晓东","vwbirthday":null,"displayname":"Gu","vwgender":"true","vwdeptcode":"50076822","ou":"技术信息科","departmentnumber":"/12345678/40000000/50039127/50076809/50076822/","vwdutycode":"00400079","vwdutyname":"技术信息科经理","vwemployeetypeid":"1","st":"0","vwlevelid":"5","mail":"Gu@faw-vw.com","vwtelephonenumber":"+86-431-85866378","vwmobile":"13500810178","vwfwnumber":null,"vwjoindate":"1991/5/13","vwpersk":"10","sn":"顾","givenname":"晓东","o":"FAW-VW","preferredlanguage":"zh","vwsectornumber":"T-E-PS-2","homepostaladdress":"1000"}}')
         var _this = this;
         if (!uid || !password) {
+            this.errorMessage = '请填写用户名或密码';
             return;
         }
         this.loginService.login(uid, password)
@@ -1395,7 +1432,13 @@ var LoginComponent = /** @class */ (function () {
                 var redirect = '/';
                 _this.router.navigate([redirect]);
             }
+            else {
+                _this.errorMessage = user.error.message;
+            }
         });
+    };
+    LoginComponent.prototype.clearError = function () {
+        this.errorMessage = '';
     };
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -1556,14 +1599,14 @@ var SubtabsComponent = /** @class */ (function () {
 /***/ "./src/app/vacation-apply/vacation-apply.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [header]=\"header\" ></app-header>\n\n\n<div class=\"page\">\n    <div class=\"vacationtype\">        \n        <label>选择休假类型</label>\n    </div>\n</div>\n\n\n<div class=\"\"></div>\n\n\n"
+module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<br/>\n\n<div class=\"page\">\n    <div class=\"vacationtype\">\n        <span>选择休假类型</span>\n        <a (click)=\"showVacationTypeList('in')\">{{selectedVacationType || '请选择'}}</a>\n    </div>\n\n    <div class=\"vacationTypeList\"\n        [@flyInOut]=\"vacationTypeListPosition\"\n        >\n        <ul>\n            <li *ngFor=\"let type of types\"\n                (click)=\"selectVacationType(type.name)\"\n                >\n                <div class=\"iconText\">{{type.name}}</div>\n            </li>\n        </ul>\n    </div>\n\n    <br/>\n\n    <div class=\"\">+ 添加假期计划</div>\n\n    \n</div>\n\n\n<app-footer [navs]=\"navs\" [isSubFooter]=\"isSubFooter\"></app-footer>\n\n\n\n\n\n"
 
 /***/ }),
 
 /***/ "./src/app/vacation-apply/vacation-apply.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".page {\n  padding-top: 44px; }\n"
+module.exports = ".page {\n  padding-top: 44px;\n  width: 100%;\n  overflow: hidden; }\n  .page .vacationTypeList {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    padding-top: 44px;\n    background-color: #F4F4F4; }\n"
 
 /***/ }),
 
@@ -1587,12 +1630,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var VacationApplyComponent = /** @class */ (function () {
     function VacationApplyComponent() {
+        this.vacationTypeListPosition = 'off';
         this.header = {
             "title": "申请假期",
             "leftBack": true
         };
+        this.types = [{
+                "name": "年休假"
+            }, {
+                "name": "事假"
+            }, {
+                "name": "探亲假"
+            }, {
+                "name": "婚嫁"
+            }, {
+                "name": "串休"
+            }, {
+                "name": "补打卡KA"
+            }, {
+                "name": "外勤"
+            }, {
+                "name": "出差"
+            }];
+        this.navs = [{
+                "url": "/vacation",
+                "image": "holiday.svg",
+                "name": "假期",
+                "current": true
+            }, {
+                "url": "/attence",
+                "name": "考勤",
+                "image": "check.svg"
+            }, {
+                "url": "",
+                "image": "notice.svg",
+                "name": "公告"
+            }];
+        this.isSubFooter = true;
     }
     VacationApplyComponent.prototype.ngOnInit = function () {
+    };
+    VacationApplyComponent.prototype.selectVacationType = function (type) {
+        this.selectedVacationType = type;
+        this.showVacationTypeList('off');
+    };
+    VacationApplyComponent.prototype.showVacationTypeList = function (status) {
+        this.vacationTypeListPosition = status;
     };
     VacationApplyComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1600,15 +1683,11 @@ var VacationApplyComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/vacation-apply/vacation-apply.component.html"),
             styles: [__webpack_require__("./src/app/vacation-apply/vacation-apply.component.scss")],
             animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* trigger */])('flyInOut', [
-                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["b" /* state */])('in', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["c" /* style */])({ transform: 'translateX(0)' })),
-                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["d" /* transition */])('void => *', [
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["c" /* style */])({ transform: 'translateX(-100%)' }),
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["a" /* animate */])(100)
-                    ]),
-                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["d" /* transition */])('* => void', [
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["a" /* animate */])(100, Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["c" /* style */])({ transform: 'translateX(100%)' }))
-                    ])
+                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* trigger */])('flyInOut', [
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* state */])('in', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(0px)' })),
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* state */])('off', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({ transform: 'translateX(100%)' })),
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* transition */])("off => in", Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])("500ms ease")),
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* transition */])("in => off", Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])("200ms ease"))
                 ])
             ]
         }),
@@ -1621,10 +1700,60 @@ var VacationApplyComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/vacation-history/vacation-history.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  vacation-history works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/vacation-history/vacation-history.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/vacation-history/vacation-history.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VacationHistoryComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var VacationHistoryComponent = /** @class */ (function () {
+    function VacationHistoryComponent() {
+    }
+    VacationHistoryComponent.prototype.ngOnInit = function () {
+    };
+    VacationHistoryComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-vacation-history',
+            template: __webpack_require__("./src/app/vacation-history/vacation-history.component.html"),
+            styles: [__webpack_require__("./src/app/vacation-history/vacation-history.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], VacationHistoryComponent);
+    return VacationHistoryComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/vacation-mine/vacation-mine.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-calendar></app-calendar>\n\n<div class=\"tips\">\n    <span>\n        <em></em>\n        今天\n    </span>\n    <span>\n        <em></em>\n        已用\n    </span>\n</div>\n\n<div class=\"btns\">\n    <a class=\"btn\" routerLink=\"/vacationapply\">申请休假</a>\n</div>"
+module.exports = "<app-subtabs [tabs]=\"tabs\"></app-subtabs>\n\n<div class=\"vacationInfo\">\n    <ul>\n        <li>\n            <span class=\"all\">\n                年假：<em>10</em>天\n            </span>\n            <span class=\"reminder\">\n                剩余：<em>6</em>天\n            </span>\n        </li>\n        <li>\n            <span class=\"all\">\n                事假：<em>10</em>天\n            </span>\n            <span class=\"reminder\">\n                剩余：<em>6</em>天\n            </span>\n        </li>\n    </ul>\n</div>\n\n\n<app-calendar></app-calendar>\n\n<div class=\"tips\">\n    <span>\n        <em></em>\n        今天\n    </span>\n    <span>\n        <em></em>\n        已用\n    </span>\n</div>\n\n<div class=\"btns\">\n    <a class=\"btn\" routerLink=\"/vacationapply\">申请休假</a>\n</div>"
 
 /***/ }),
 
@@ -1653,6 +1782,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var VacationMineComponent = /** @class */ (function () {
     function VacationMineComponent() {
+        this.tabs = [{
+                "url": "/vacation/mine",
+                "name": "我的假期"
+            }, {
+                "url": "/vacation/history",
+                "name": "我的申请"
+            }];
     }
     VacationMineComponent.prototype.ngOnInit = function () {
     };
@@ -1674,7 +1810,7 @@ var VacationMineComponent = /** @class */ (function () {
 /***/ "./src/app/vacation/vacation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<div class=\"page\">\n    <app-profile></app-profile>\n    <router-outlet></router-outlet>\n</div>\n\n\n<app-footer [navs]=\"navs\"></app-footer>\n"
+module.exports = "<app-header [header]=\"header\" ></app-header>\n\n<div class=\"page\">\n    <app-profile></app-profile>\n    <router-outlet></router-outlet>\n</div>\n\n\n<app-footer [navs]=\"navs\" [isSubFooter]=\"isSubFooter\"></app-footer>\n"
 
 /***/ }),
 
@@ -1715,18 +1851,19 @@ var VacationComponent = /** @class */ (function () {
         };
         this.navs = [{
                 "url": "/vacation",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "holiday.svg",
                 "name": "假期",
                 "current": true
             }, {
                 "url": "/attence",
                 "name": "考勤",
-                "image": "http://placeholder.qiniudn.com/48x48"
+                "image": "check.svg"
             }, {
                 "url": "",
-                "image": "http://placeholder.qiniudn.com/48x48",
+                "image": "notice.svg",
                 "name": "公告"
             }];
+        this.isSubFooter = true;
     }
     VacationComponent.prototype.ngOnInit = function () {
     };
