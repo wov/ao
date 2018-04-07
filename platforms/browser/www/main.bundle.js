@@ -272,7 +272,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["HttpClientModule"],
-                __WEBPACK_IMPORTED_MODULE_4_ng_inline_svg__["InlineSVGModule"].forRoot({ baseUrl: '/assets/icons/' }),
+                __WEBPACK_IMPORTED_MODULE_4_ng_inline_svg__["InlineSVGModule"].forRoot({ baseUrl: './assets/icons/' }),
                 __WEBPACK_IMPORTED_MODULE_30__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_25__login_service__["a" /* LoginService */], __WEBPACK_IMPORTED_MODULE_24__auth_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_26__message_service__["a" /* MessageService */]],
@@ -1339,7 +1339,7 @@ var LoginService = /** @class */ (function () {
         this.localLoginUrl = 'http://localhost:8080/mfp/api/adapters/OA/authorization/login';
     }
     LoginService.prototype.login = function (uid, password) {
-        var url = this.loginUrl + "?uid=" + uid + "&password=" + password;
+        var url = this.localLoginUrl + "?uid=" + uid + "&password=" + password;
         return this.http.get(url)
             .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["c" /* timeout */])(3000), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["b" /* tap */])(function (_) { }), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["a" /* catchError */])(this.handleError('login', { "success": false,
             "error": {
